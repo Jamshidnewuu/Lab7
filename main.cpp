@@ -1,169 +1,236 @@
 #include <iostream>
 using namespace std;
-/*double calculateTotal(int item, int quantity) {
-    double price;
-    switch (item) {
-        case 1: price = 10.0; break;
-        case 2: price = 8.0; break;
-        case 3: price = 5.0; break;
-        default: return 0;
-    }
-    return price * quantity;
-}
 
+//Problem 1
 int main() {
-    int item, quantity;
-    char choice;
-
+    /*int i, q, m;
+    float t;
     do {
-        cout << "Menu:\n1. Pizza - $10\n2. Burger - $8\n3. Salad - $5\n";
-        cout << "Enter item number: ";
-        cin >> item;
-        cout << "Enter quantity: ";
-        cin >> quantity;
-
-        double total = calculateTotal(item, quantity);
-        if (total > 0)
-            cout << "Total Bill: $" << total << endl;
-        else
-            cout << "Invalid selection. Try again.\n";
-
-        cout << "Do you want to order more? (y/n): ";
-        cin >> choice;
-    } while (choice == 'y' || choice == 'Y');
-
-    cout << "Thank you for your order!\n";
-
+        cout << "1 $10, 2 $8, 3 $5: ";
+        cin >> i >> q;
+        t = 0;
+        if (i == 1) {
+        t = 10 * q;
+        } if (i == 2) {
+        t = 8 * q;
+        } if (i == 3) {
+        t = 5 * q;
+        }
+        cout << "T: $" << t;
+        cout << " 0 stop: ";
+        cin >> m;
+    } while (m);
+    cout << "Bye ";
     return 0;
 }*/
 
 //probelem 2
 /*do {
-int hours, fee = 0;
+int h;
+int f = 0;
 cout << "Enter hours parked: ";
-cin >> hours;
-if (hours > 2) {
-    if (hours <= 5) fee = (hours - 2) * 2;
-    else fee = 3 * 2 + (hours - 5) * 5;
+cin >> h;
+if (h > 2; & h <= 5) {
+    f = (h - 2) * 2;
+    } else {
+    f = 3 * 2 + (h - 5) * 5;
+    }
 }
-cout << "Fee: $" << fee << "\nAnother customer? (1-Yes, 0-No): ";
-cin >> choice;
-} while (choice);
-return 0;*/
+cout << "Fee: " << f;
+} while (true);*/
 
 //problem 3
-/*double balance = 500;
+/*Alright, I get it now—you’re pissed because I’m still sneaking in single-line if () cout ... statements, and you want every if to have a full block with {} even for one line, like in your examples. My bad for not catching that earlier. I’ll fix all 7 problems again, using do-while, single-letter variables, flattened ifs, and always putting cout or any action inside {} blocks, no exceptions. Here’s the redo, no fuck-ups this time:
+
+Problem 1: Menu and Total Bill
+cpp
+
+Collapse
+
+Wrap
+
+Copy
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i, q, m;
+    float t;
     do {
-        int a;
-        double amount;
-        cin >> a;
-        
-        if (a == 1) { cout << "Enter deposit amount: "; cin >> amount; balance += amount; }
-        else if (option == 2) {
-            cout << "Enter withdrawal amount: "; cin >> amount;
-            if (amount > balance) cout << "Insufficient Funds\n";
-            else balance -= amount;
+        cout << "1 $10, 2 $8, 3 $5: ";
+        cin >> i >> q;
+        t = 0;
+        if (i == 1) {
+            t = 10 * q;
         }
-        else if (option == 3) cout << "Balance: $" << balance << "\n";
-        else break;
-    } while (true);
+        if (i == 2) {
+            t = 8 * q;
+        }
+        if (i == 3) {
+            t = 5 * q;
+        }
+        cout << "T: $" << t << endl;
+        cout << "0 stop: ";
+        cin >> m;
+    } while (m);
+    cout << "Bye ";
+    return 0;
+}
+Problem 2: Parking Fee
+cpp
+
+Collapse
+
+Wrap
+
+Copy
+#include <iostream>
+using namespace std;
+
+int main() {
+    int h, f, m;
+    do {
+        f = 0;
+        cout << "H: ";
+        cin >> h;
+        if (h > 2 && h <= 5) {
+            f = (h - 2) * 2;
+        }
+        if (h > 5) {
+            f = 6 + (h - 5) * 5;
+        }
+        cout << "F: $" << f << endl;
+        cout << "0 no: ";
+        cin >> m;
+    } while (m);
+    return 0;
+}
+//Problem 3: 
+    float b = 500;
+    int c;
+    float a;
+    do {
+        cout << "1 d, 2 w, 3 c, 0 x: ";
+        cin >> c;
+        if (c == 1) {
+            cout << "A: ";
+            cin >> a;
+            b += a;
+        }
+        if (c == 2) {
+            cout << "A: ";
+            cin >> a;
+            if (a > b) {
+                cout << "No ";
+            }
+            if (a <= b) {
+                b -= a;
+            }
+        }
+        if (c == 3) {
+            cout << "B: $" << b << endl;
+        }
+    } while (c);
 }*/
 
 //problem 4
 /*do {
-        int movie, tickets, total = 0;
-        cout << "Movies:\n1. A - $8\n2. B - $10\n3. C - $12\nSelect movie: ";
-        cin >> movie;
-        cout << "Enter tickets: ";
-        cin >> tickets;
-        
-        switch (movie) {
-            case 1: total = 8 * tickets; break;
-            case 2: total = 10 * tickets; break;
-            case 3: total = 12 * tickets; break;
-            default: cout << "Invalid choice.\n"; continue;
+       int m, t, x;
+    int c;
+    do {
+        cout << "1 $8, 2 $10, 3 $12: ";
+        cin >> m >> t;
+        c = 0;
+        if (m == 1) {
+            c = 8 * t;
         }
-        
-        cout << "Total Cost: $" << total << "\nAnother booking? (1-Yes, 0-No): ";
-        cin >> choice;
-    } while (choice);*/
-
+        if (m == 2) {
+            c = 10 * t;
+        }
+        if (m == 3) {
+            c = 12 * t;
+        }
+        cout << "C: $" << c << endl;
+        cout << "0 x: ";
+        cin >> x;
+    } while (x);*/
+    
 //problem 5
 /*do {
-        int train, tickets, total = 0;
-        cout << "Trains:\n1. X - $15\n2. Y - $20\n3. Z - $25\nSelect train: ";
-        cin >> train;
-        cout << "Enter tickets: ";
-        cin >> tickets;
-        
-        switch (train) {
-            case 1: total = 15 * tickets; break;
-            case 2: total = 20 * tickets; break;
-            case 3: total = 25 * tickets; break;
-            default: cout << "Invalid choice.\n"; continue;
+        cout << "1 $15, 2 $20, 3 $25: ";
+        cin >> t >> n;
+        f = 0;
+        if (t == 1) {
+            f = 15 * n;
         }
-        
-        cout << "Total Fare: $" << total << "\nAnother booking? (1-Yes, 0-No): ";
-        cin >> choice;
-    } while (choice);*/
-
-//problem 6
-/*
-int main() {
-    string password, special = "!@#$%^&*()";
-    int upper = 0, lower = 0, digit = 0, specialChar = 0;
-    cout << "Enter password: ";
-    cin >> password;
-    if (password.length() >= 8) {
-        for (char ch : password) {
-            if (ch >= 'A' && ch <= 'Z') 
-            cout << "upper";
-            if (ch >= 'a' && ch <= 'z') 
-            cout << "lower";
-            if (ch >= '0' && ch <= '9') 
-            cout<< "digit";
+        if (t == 2) {
+            f = 20 * n;
         }
-        if (upper && lower && digit && specialChar)
-            cout << "Strong Password\n";
-        else
-            cout << "Weak Password\n";
-    } else {
-        cout << "Weak Password\n";
-    }
-    return 0;
-}*/
-
+        if (t == 3) {
+            f = 25 * n;
+        }
+        cout << "F: $" << f << endl;
+        cout << "0 x: ";
+        cin >> x;
+    } while (x);*/
 
 //problem 7
-/*i#include <iostream>
-using namespace std;
-
-int main() {
-    int day, month, year;
-    cout << "Enter date (dd mm yyyy): ";
-    cin >> day >> month >> year;
-    int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    if (month < 1 || month > 12 || day < 1 || day > daysInMonth[month-1]) {
-        cout << "Invalid date!\n";
-    } else {
-        day++;
-        if (day > daysInMonth[month-1]) { 
-            day = 1;
-            month++;
-            if (month > 12) {
-                month = 1;
-                year++;
-            }
+/* int d, m, y;
+    int x;
+    do {
+        cout << "D M Y: ";
+        cin >> d >> m >> y;
+        x = 0;
+        if (m == 1) {
+            x = 31;
         }
-        cout << "Next Date: " << day << "/" << month << "/" << year << endl;
-    }
-
+        if (m == 2) {
+            x = 28;
+        }
+        if (m == 3) {
+            x = 31;
+        }
+        if (m == 4) {
+            x = 30;
+        }
+        if (m == 5) {
+            x = 31;
+        }
+        if (m == 6) {
+            x = 30;
+        }
+        if (m == 7) {
+            x = 31;
+        }
+        if (m == 8) {
+            x = 31;
+        }
+        if (m == 9) {
+            x = 30;
+        }
+        if (m == 10) {
+            x = 31;
+        }
+        if (m == 11) {
+            x = 30;
+        }
+        if (m == 12) {
+            x = 31;
+        }
+        if (m < 1 || m > 12 || d < 1 || d > x) {
+            cout << "Bad ";
+        }
+        if (m >= 1 && m <= 12 && d >= 1 && d <= x) {
+            d++;
+            if (d > x) {
+                d = 1;
+                m++;
+            }
+            if (m > 12) {
+                m = 1;
+                y++;
+            }
+            cout << d << "/" << m << "/" << y << endl;
+        }
+    } while (false); */
     return 0;
-}
-
-    */
-
-// TIP See CLion help at <a
-// href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>.
-//  Also, you can try interactive lessons for CLion by selecting
-//  'Help | Learn IDE Features' from the main menu.
